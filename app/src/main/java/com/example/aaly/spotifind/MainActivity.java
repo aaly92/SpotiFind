@@ -39,9 +39,11 @@ public class MainActivity extends AppCompatActivity {
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBarView.setVisibility(View.VISIBLE);
                 SpotifyArtistAPI.Factory.getInstance().getArtists(artistNameView.getText().toString()).enqueue(new Callback<com.example.aaly.spotifind.data.model.Artist>() {
                     @Override
                     public void onResponse(Call<com.example.aaly.spotifind.data.model.Artist> call, Response<com.example.aaly.spotifind.data.model.Artist> response) {
+                        progressBarView.setVisibility(View.GONE);
 
                         final List<Item> artistList = response.body().getArtists().getItems();
                         ArtistAdapter artistAdapter = new ArtistAdapter(MainActivity.this, artistList);
