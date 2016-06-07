@@ -7,6 +7,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/artistName"
         android:gravity="center"
-        android:padding="50dp"/>
+        android:padding="30dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/artistImage"/>
 
 </LinearLayout>
