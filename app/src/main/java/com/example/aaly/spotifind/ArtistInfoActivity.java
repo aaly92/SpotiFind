@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import com.example.aaly.spotifind.data.model.Item;
+
 
 public class ArtistInfoActivity extends AppCompatActivity {
     @Override
@@ -12,7 +14,7 @@ public class ArtistInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.artist_info_layout);
         Intent activityThatCalled = getIntent();
-        Artist artist = (Artist) activityThatCalled.getSerializableExtra("artist");
+        Item artist = (Item) activityThatCalled.getSerializableExtra("artist");
 
         TextView artistNameView = (TextView) findViewById(R.id.artistName);
         if(artistNameView != null && artist !=null ) {

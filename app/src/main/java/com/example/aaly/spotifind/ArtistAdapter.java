@@ -7,11 +7,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.example.aaly.spotifind.data.model.Item;
 
-public class ArtistAdapter extends ArrayAdapter<Artist> {
+import java.util.List;
 
-    public ArtistAdapter(Context context, ArrayList<Artist> values){
+public class ArtistAdapter extends ArrayAdapter<Item> {
+
+    public ArtistAdapter(Context context, List<Item> values){
         super(context, R.layout.artist_row_layout, values);
     }
     @Override
