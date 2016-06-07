@@ -1,11 +1,5 @@
 package com.example.aaly.spotifind.data.remote;
 
-
-import com.example.aaly.spotifind.data.model.Artists;
-import com.example.aaly.spotifind.data.model.Item;
-
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -21,6 +15,7 @@ public interface SpotifyArtistAPI  {
 
     class Factory {
         private static SpotifyArtistAPI service;
+
         public static SpotifyArtistAPI getInstance() {
             if(service == null){
                 Retrofit retrofit = new Retrofit.Builder()

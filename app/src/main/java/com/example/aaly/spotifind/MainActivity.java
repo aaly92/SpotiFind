@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.aaly.spotifind.data.model.Artist;
 import com.example.aaly.spotifind.data.model.Item;
 import com.example.aaly.spotifind.data.remote.SpotifyArtistAPI;
 
@@ -40,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 progressBarView.setVisibility(View.VISIBLE);
-                SpotifyArtistAPI.Factory.getInstance().getArtists(artistNameView.getText().toString()).enqueue(new Callback<com.example.aaly.spotifind.data.model.Artist>() {
+                SpotifyArtistAPI.Factory.getInstance().getArtists(artistNameView.getText().toString()).enqueue(new Callback<Artist>() {
                     @Override
-                    public void onResponse(Call<com.example.aaly.spotifind.data.model.Artist> call, Response<com.example.aaly.spotifind.data.model.Artist> response) {
+                    public void onResponse(Call<Artist> call, Response<Artist> response) {
                         progressBarView.setVisibility(View.GONE);
 
                         final List<Item> artistList = response.body().getArtists().getItems();
