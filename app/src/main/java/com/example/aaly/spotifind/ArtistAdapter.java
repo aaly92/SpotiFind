@@ -13,11 +13,12 @@ import java.util.List;
 
 public class ArtistAdapter extends ArrayAdapter<Item> {
 
-    public ArtistAdapter(Context context, List<Item> values){
+    public ArtistAdapter(Context context, List<Item> values) {
         super(context, R.layout.artist_row_layout, values);
     }
+
     @Override
-    public View getView(int position, View converView, ViewGroup parent ) {
+    public View getView(int position, View converView, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View view = inflater.inflate(R.layout.artist_row_layout, parent, false);
 

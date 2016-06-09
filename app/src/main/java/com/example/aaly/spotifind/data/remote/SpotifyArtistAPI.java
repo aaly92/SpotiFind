@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
-public interface SpotifyArtistAPI  {
+public interface SpotifyArtistAPI {
 
     String API_URL = "https://api.spotify.com/v1/";
 
@@ -17,7 +17,7 @@ public interface SpotifyArtistAPI  {
         private static SpotifyArtistAPI service;
 
         public static SpotifyArtistAPI getInstance() {
-            if(service == null){
+            if (service == null) {
                 Retrofit retrofit = new Retrofit.Builder()
                         .baseUrl(API_URL)
                         .addConverterFactory(GsonConverterFactory.create())
