@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SpotiFind</string>
+    <string name="enter_artist_name">Enter artist name</string>
+    <string name="search_button">search</string>
 </resources>
