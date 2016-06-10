@@ -13,8 +13,9 @@ import java.util.List;
 public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistViewHolder> {
     private List<Item> artistList;
 
-    public class ArtistViewHolder extends  RecyclerView.ViewHolder {
+    public class ArtistViewHolder extends RecyclerView.ViewHolder {
         public TextView artistNameView;
+
         public ArtistViewHolder(View view) {
             super(view);
             artistNameView = (TextView) view.findViewById((R.id.artistNameView));
@@ -25,7 +26,7 @@ public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistView
         this.artistList = artistList;
     }
 
-    public  ArtistAdapter(List<Item> artistList) {
+    public ArtistAdapter(List<Item> artistList) {
         this.artistList = artistList;
     }
 
@@ -37,12 +38,12 @@ public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistView
 
     @Override
     public int getItemCount() {
-        return  artistList.size();
+        return artistList.size();
     }
 
     @Override
     public ArtistViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.artist_row_layout, parent,false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.artist_row_layout, parent, false);
         return new ArtistViewHolder(itemView);
     }
 }

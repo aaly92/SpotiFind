@@ -7,12 +7,9 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -52,8 +49,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getApplicationContext(), recyclerView, new ClickListener() {
             @Override
             public void onClick(View view, int position) {
-
-                String artistPicked = "You selected " + String.valueOf( artistList.get(position).getName());
+                String artistPicked = "You selected " + String.valueOf(artistList.get(position).getName());
                 Toast.makeText(MainActivity.this, artistPicked, Toast.LENGTH_SHORT).show();
                 Intent displayArtistInfoIntent = new Intent(MainActivity.this, ArtistInfoActivity.class);
                 Item item = artistList.get(position);
