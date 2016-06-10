@@ -25,6 +25,13 @@
         android:layout_gravity="end"
         android:text="@string/search_button" />
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+    />
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -37,11 +44,6 @@
             android:layout_centerHorizontal="true"
             android:indeterminate="true"
             android:visibility="gone" />
-
-        <ListView
-            android:id="@+id/artistList"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
     </RelativeLayout>
 </LinearLayout>
 

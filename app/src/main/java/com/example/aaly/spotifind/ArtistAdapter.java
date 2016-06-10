@@ -1,32 +1,48 @@
 package com.example.aaly.spotifind;
 
-import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.example.aaly.spotifind.data.model.Item;
 
 import java.util.List;
 
-public class ArtistAdapter extends ArrayAdapter<Item> {
+public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistViewHolder> {
+    private List<Item> artistList;
 
-    public ArtistAdapter(Context context, List<Item> values) {
-        super(context, R.layout.artist_row_layout, values);
+    public class ArtistViewHolder extends  RecyclerView.ViewHolder {
+        public TextView artistNameView;
+        public ArtistViewHolder(View view) {
+            super(view);
+            artistNameView = (TextView) view.findViewById((R.id.artistNameView));
+        }
+    }
+
+    public void setArtistList(List<Item> artistList) {
+        this.artistList = artistList;
+    }
+
+    public  ArtistAdapter(List<Item> artistList) {
+        this.artistList = artistList;
     }
 
     @Override
-    public View getView(int position, View converView, ViewGroup parent) {
-        LayoutInflater inflater = LayoutInflater.from(getContext());
-        View view = inflater.inflate(R.layout.artist_row_layout, parent, false);
+    public void onBindViewHolder(ArtistViewHolder holder, int position) {
+        Item item = artistList.get(position);
+        holder.artistNameView.setText(item.getName());
+    }
 
-        String artist = getItem(position).getName();
+    @Override
+    public int getItemCount() {
+        return  artistList.size();
+    }
 
-        TextView textView = (TextView) view.findViewById(R.id.artistRowView);
-
-        textView.setText(artist);
-        return view;
+    @Override
+    public ArtistViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.artist_row_layout, parent,false);
+        return new ArtistViewHolder(itemView);
     }
 }
